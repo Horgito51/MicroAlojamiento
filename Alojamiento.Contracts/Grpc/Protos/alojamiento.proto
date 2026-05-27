@@ -1,0 +1,293 @@
+syntax = "proto3";
+
+package hotel.alojamiento.v1;
+
+option csharp_namespace = "Alojamiento.Contracts.Grpc.V1";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+service AlojamientoGrpc {
+  rpc GetSucursalById(IdRequest) returns (Sucursal);
+  rpc GetSucursalByGuid(GuidRequest) returns (Sucursal);
+  rpc ListSucursales(ListSucursalesRequest) returns (SucursalList);
+  rpc CreateSucursal(SucursalUpsertRequest) returns (Sucursal);
+  rpc UpdateSucursal(SucursalUpdateRequest) returns (google.protobuf.Empty);
+  rpc InhabilitarSucursal(InhabilitarRequest) returns (google.protobuf.Empty);
+  rpc GetTipoHabitacionById(IdRequest) returns (TipoHabitacion);
+  rpc GetTipoHabitacionByGuid(GuidRequest) returns (TipoHabitacion);
+  rpc ListTiposHabitacion(google.protobuf.Empty) returns (TipoHabitacionList);
+  rpc ListTiposHabitacionPublicos(google.protobuf.Empty) returns (TipoHabitacionList);
+  rpc CreateTipoHabitacion(TipoHabitacionUpsertRequest) returns (TipoHabitacion);
+  rpc UpdateTipoHabitacion(TipoHabitacionUpdateRequest) returns (google.protobuf.Empty);
+  rpc GetHabitacionById(IdRequest) returns (Habitacion);
+  rpc GetHabitacionByGuid(GuidRequest) returns (Habitacion);
+  rpc ListHabitaciones(google.protobuf.Empty) returns (HabitacionList);
+  rpc GetHabitacionesDisponibles(HabitacionesDisponiblesRequest) returns (HabitacionList);
+  rpc SetHabitacionEstado(SetHabitacionEstadoRequest) returns (google.protobuf.Empty);
+  rpc GetTarifaVigente(GetTarifaVigenteRequest) returns (Tarifa);
+  rpc GetTarifaVigenteRango(GetTarifaVigenteRangoRequest) returns (TarifaResponse);
+  rpc ValidateHabitacionesReservables(ValidateHabitacionesRequest) returns (ValidateHabitacionesResponse);
+}
+
+service ValoracionGrpc {
+  rpc GetValoracionById(IdRequest) returns (Valoracion);
+  rpc GetValoracionByGuid(GuidRequest) returns (Valoracion);
+  rpc ListValoraciones(ValoracionFiltroRequest) returns (ValoracionPage);
+  rpc CreateValoracion(ValoracionCreateRequest) returns (Valoracion);
+  rpc ModerarValoracion(ValoracionModeracionRequest) returns (google.protobuf.Empty);
+  rpc ResponderValoracion(ValoracionRespuestaRequest) returns (google.protobuf.Empty);
+}
+
+message IdRequest { int32 id = 1; }
+message GuidRequest { string guid = 1; }
+message PageRequest { int32 page_number = 1; int32 page_size = 2; }
+
+message Imagen {
+  string imagen_guid = 1;
+  google.protobuf.Int32Value id_imagen = 2;
+  string url_imagen = 3;
+  string descripcion = 4;
+  int32 orden = 5;
+  bool es_principal = 6;
+}
+
+message Sucursal {
+  int32 id_sucursal = 1;
+  string sucursal_guid = 2;
+  string codigo_sucursal = 3;
+  string nombre_sucursal = 4;
+  string descripcion_sucursal = 5;
+  string tipo_alojamiento = 6;
+  google.protobuf.Int32Value estrellas = 7;
+  string pais = 8;
+  string provincia = 9;
+  string ciudad = 10;
+  string direccion = 11;
+  string telefono = 12;
+  string correo = 13;
+  string latitud = 14;
+  string longitud = 15;
+  string hora_checkin = 16;
+  string hora_checkout = 17;
+  bool acepta_ninos = 18;
+  bool permite_mascotas = 19;
+  bool se_permite_fumar = 20;
+  string estado_sucursal = 21;
+  repeated Imagen imagenes = 22;
+  bytes row_version = 23;
+}
+
+message SucursalUpsertRequest {
+  string codigo_sucursal = 1;
+  string nombre_sucursal = 2;
+  string descripcion_sucursal = 3;
+  string descripcion_corta = 4;
+  string tipo_alojamiento = 5;
+  google.protobuf.Int32Value estrellas = 6;
+  string pais = 7;
+  string provincia = 8;
+  string ciudad = 9;
+  string direccion = 10;
+  string telefono = 11;
+  string correo = 12;
+  string latitud = 13;
+  string longitud = 14;
+  string hora_checkin = 15;
+  string hora_checkout = 16;
+  bool checkin_anticipado = 17;
+  bool checkout_tardio = 18;
+  bool acepta_ninos = 19;
+  bool permite_mascotas = 20;
+  bool se_permite_fumar = 21;
+  string estado_sucursal = 22;
+  repeated Imagen imagenes = 23;
+}
+
+message SucursalUpdateRequest {
+  int32 id_sucursal = 1;
+  SucursalUpsertRequest data = 2;
+}
+
+message ListSucursalesRequest { string estado = 1; }
+message SucursalList { repeated Sucursal items = 1; }
+
+message TipoHabitacion {
+  int32 id_tipo_habitacion = 1;
+  string tipo_habitacion_guid = 2;
+  string codigo_tipo_habitacion = 3;
+  string nombre_tipo_habitacion = 4;
+  string descripcion = 5;
+  int32 capacidad_adultos = 6;
+  int32 capacidad_ninos = 7;
+  int32 capacidad_total = 8;
+  string tipo_cama = 9;
+  string area_m2 = 10;
+  bool permite_eventos = 11;
+  bool permite_reserva_publica = 12;
+  string estado_tipo_habitacion = 13;
+  repeated Imagen imagenes = 14;
+  bytes row_version = 15;
+}
+
+message TipoHabitacionUpsertRequest {
+  string codigo_tipo_habitacion = 1;
+  string nombre_tipo_habitacion = 2;
+  string descripcion = 3;
+  int32 capacidad_adultos = 4;
+  int32 capacidad_ninos = 5;
+  int32 capacidad_total = 6;
+  string tipo_cama = 7;
+  string area_m2 = 8;
+  bool permite_eventos = 9;
+  bool permite_reserva_publica = 10;
+  string estado_tipo_habitacion = 11;
+  repeated Imagen imagenes = 12;
+}
+
+message TipoHabitacionUpdateRequest {
+  int32 id_tipo_habitacion = 1;
+  TipoHabitacionUpsertRequest data = 2;
+}
+
+message TipoHabitacionList { repeated TipoHabitacion items = 1; }
+
+message Habitacion {
+  int32 id_habitacion = 1;
+  string habitacion_guid = 2;
+  int32 id_sucursal = 3;
+  int32 id_tipo_habitacion = 4;
+  string numero_habitacion = 5;
+  google.protobuf.Int32Value piso = 6;
+  int32 capacidad_habitacion = 7;
+  string precio_base = 8;
+  string descripcion_habitacion = 9;
+  string estado_habitacion = 10;
+  bool es_eliminado = 11;
+  repeated Imagen imagenes = 12;
+  bytes row_version = 13;
+}
+
+message HabitacionList { repeated Habitacion items = 1; }
+
+message HabitacionesDisponiblesRequest {
+  int32 id_sucursal = 1;
+  google.protobuf.Timestamp fecha_inicio = 2;
+  google.protobuf.Timestamp fecha_fin = 3;
+}
+
+message SetHabitacionEstadoRequest {
+  int32 id_habitacion = 1;
+  string nuevo_estado = 2;
+  string usuario = 3;
+}
+
+message Tarifa {
+  int32 id_tarifa = 1;
+  string tarifa_guid = 2;
+  string codigo_tarifa = 3;
+  int32 id_sucursal = 4;
+  int32 id_tipo_habitacion = 5;
+  string canal_tarifa = 6;
+  google.protobuf.Timestamp fecha_inicio = 7;
+  google.protobuf.Timestamp fecha_fin = 8;
+  string precio_por_noche = 9;
+  string porcentaje_iva = 10;
+  bool permite_portal_publico = 11;
+  string estado_tarifa = 12;
+}
+
+message TarifaResponse {
+  bool encontrada = 1;
+  Tarifa tarifa = 2;
+}
+
+message GetTarifaVigenteRequest {
+  int32 id_sucursal = 1;
+  int32 id_tipo_habitacion = 2;
+  google.protobuf.Timestamp fecha = 3;
+  string canal = 4;
+}
+
+message GetTarifaVigenteRangoRequest {
+  int32 id_sucursal = 1;
+  int32 id_tipo_habitacion = 2;
+  google.protobuf.Timestamp fecha_inicio = 3;
+  google.protobuf.Timestamp fecha_fin = 4;
+  string canal = 5;
+}
+
+message ValidateHabitacionesRequest {
+  repeated string habitacion_guids = 1;
+  google.protobuf.Timestamp fecha_inicio = 2;
+  google.protobuf.Timestamp fecha_fin = 3;
+}
+
+message ValidateHabitacionesResponse {
+  bool validas = 1;
+  repeated string errores = 2;
+}
+
+message InhabilitarRequest {
+  string guid = 1;
+  string motivo = 2;
+  string usuario = 3;
+}
+
+message Valoracion {
+  int32 id_valoracion = 1;
+  string valoracion_guid = 2;
+  int32 id_estadia = 3;
+  int32 id_cliente = 4;
+  int32 id_sucursal = 5;
+  google.protobuf.Int32Value id_habitacion = 6;
+  string puntuacion_general = 7;
+  string comentario_positivo = 8;
+  string comentario_negativo = 9;
+  string tipo_viaje = 10;
+  string estado_valoracion = 11;
+  bool publicada_en_portal = 12;
+  string respuesta_hotel = 13;
+  google.protobuf.Timestamp fecha_registro_utc = 14;
+}
+
+message ValoracionCreateRequest {
+  int32 id_estadia = 1;
+  int32 id_cliente = 2;
+  int32 id_sucursal = 3;
+  google.protobuf.Int32Value id_habitacion = 4;
+  string puntuacion_general = 5;
+  string comentario_positivo = 6;
+  string comentario_negativo = 7;
+  string tipo_viaje = 8;
+}
+
+message ValoracionFiltroRequest {
+  PageRequest page = 1;
+  google.protobuf.Int32Value id_sucursal = 2;
+  google.protobuf.Int32Value id_habitacion = 3;
+  google.protobuf.Int32Value id_cliente = 4;
+  string estado_valoracion = 5;
+  bool publicada_en_portal = 6;
+}
+
+message ValoracionPage {
+  repeated Valoracion items = 1;
+  int32 total_count = 2;
+  int32 page_number = 3;
+  int32 page_size = 4;
+}
+
+message ValoracionModeracionRequest {
+  int32 id_valoracion = 1;
+  string nuevo_estado = 2;
+  string motivo = 3;
+  string moderador = 4;
+}
+
+message ValoracionRespuestaRequest {
+  int32 id_valoracion = 1;
+  string respuesta = 2;
+  string usuario = 3;
+}

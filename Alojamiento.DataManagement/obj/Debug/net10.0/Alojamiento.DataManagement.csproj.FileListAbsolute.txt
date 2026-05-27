@@ -1,0 +1,33 @@
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataManagement.deps.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataManagement.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataAccess.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataAccess.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.csproj.AssemblyReference.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.AssemblyInfoInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.AssemblyInfo.cs
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.csproj.CoreCompileInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamie.76A54C09.Up2Date
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\refint\Alojamiento.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\ref\Alojamiento.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataManagement.deps.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataManagement.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataAccess.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\bin\Debug\net10.0\Alojamiento.DataAccess.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.csproj.AssemblyReference.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.AssemblyInfoInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.AssemblyInfo.cs
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.csproj.CoreCompileInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamie.76A54C09.Up2Date
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\refint\Alojamiento.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\Alojamiento.DataManagement.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Debug\net10.0\ref\Alojamiento.DataManagement.dll
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.DataManagement.deps.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.DataManagement.dll
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.DataManagement.pdb

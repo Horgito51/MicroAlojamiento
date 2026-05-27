@@ -1,0 +1,33 @@
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\bin\Debug\net10.0\Alojamiento.Contracts.deps.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\bin\Debug\net10.0\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\bin\Debug\net10.0\Alojamiento.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.csproj.AssemblyReference.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.AssemblyInfoInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.AssemblyInfo.cs
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\refint\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\ref\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\bin\Debug\net10.0\Alojamiento.Contracts.deps.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\bin\Debug\net10.0\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\bin\Debug\net10.0\Alojamiento.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.csproj.AssemblyReference.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.AssemblyInfoInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.AssemblyInfo.cs
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\refint\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\ref\Alojamiento.Contracts.dll
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\ReservasApiAdditionalProps\Alojamiento.Contracts.deps.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\ReservasApiAdditionalProps\Alojamiento.Contracts.dll
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\ReservasApiAdditionalProps\Alojamiento.Contracts.pdb
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.Contracts.deps.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.Contracts.dll
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.Contracts.pdb
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\Alojamiento.Contracts.deps.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\Alojamiento.Contracts.dll
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\Alojamiento.Contracts.pdb

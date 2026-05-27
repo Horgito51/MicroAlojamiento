@@ -1,0 +1,4450 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Microservicio Alojamiento API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/accommodations/search": {
+      "get": {
+        "tags": [
+          "Accommodations"
+        ],
+        "parameters": [
+          {
+            "name": "Destino",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "NumAdultos",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NumNinos",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NumHabitaciones",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TipoAlojamiento",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PrecioMin",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "PrecioMax",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "CategoriaViaje",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "OrdenarPor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "Limite",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationSearchItemDTOBookingPagedResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationSearchItemDTOBookingPagedResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationSearchItemDTOBookingPagedResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/accommodations/{sucursalGuid}": {
+      "get": {
+        "tags": [
+          "Accommodations"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationDetailResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationDetailResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationDetailResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/accommodations/{sucursalGuid}/reviews": {
+      "get": {
+        "tags": [
+          "Accommodations"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limite",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationReviewDTOBookingPagedResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationReviewDTOBookingPagedResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationReviewDTOBookingPagedResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/alojamiento/sucursales/{sucursalGuid}/valoraciones": {
+      "get": {
+        "tags": [
+          "Accommodations"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limite",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationReviewDTOBookingPagedResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationReviewDTOBookingPagedResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccommodationReviewDTOBookingPagedResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Alojamiento.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Alojamiento.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/health/db": {
+      "get": {
+        "tags": [
+          "Alojamiento.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/catalogo-servicios": {
+      "get": {
+        "tags": [
+          "CatalogoServicio"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CatalogoServicioDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CatalogoServicioDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CatalogoServicioDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "CatalogoServicio"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogoServicioUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogoServicioUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogoServicioUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/catalogo-servicios/{id}": {
+      "get": {
+        "tags": [
+          "CatalogoServicio"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "CatalogoServicio"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogoServicioUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogoServicioUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogoServicioUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogoServicioDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "CatalogoServicio"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/habitaciones": {
+      "get": {
+        "tags": [
+          "Habitacion"
+        ],
+        "parameters": [
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HabitacionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HabitacionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HabitacionDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Habitacion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/habitaciones/{id}": {
+      "get": {
+        "tags": [
+          "Habitacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Habitacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionUpdateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionUpdateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Habitacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/habitaciones/{habitacionGuid}": {
+      "get": {
+        "tags": [
+          "Habitacion"
+        ],
+        "parameters": [
+          {
+            "name": "habitacionGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDetalleResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDetalleResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDetalleResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/habitaciones/{id}/estado": {
+      "patch": {
+        "tags": [
+          "Habitacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionEstadoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionEstadoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HabitacionEstadoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/public/habitaciones": {
+      "get": {
+        "tags": [
+          "HabitacionesPublic"
+        ],
+        "parameters": [
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "sucursalGuid",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HabitacionPublicDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HabitacionPublicDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HabitacionPublicDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/public/habitaciones/{habitacionGuid}": {
+      "get": {
+        "tags": [
+          "HabitacionesPublic"
+        ],
+        "parameters": [
+          {
+            "name": "habitacionGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionPublicDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionPublicDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HabitacionPublicDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/sucursales": {
+      "get": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SucursalDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SucursalDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SucursalDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Sucursal"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/sucursales/{id}": {
+      "get": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/sucursales/{sucursalGuid}": {
+      "get": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/sucursales/{sucursalGuid}/politicas": {
+      "patch": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalPoliticasPatchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalPoliticasPatchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SucursalPoliticasPatchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/sucursales/{sucursalGuid}/inhabilitar": {
+      "patch": {
+        "tags": [
+          "Sucursal"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InhabilitarRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InhabilitarRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InhabilitarRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/public/sucursales/{sucursalGuid}": {
+      "get": {
+        "tags": [
+          "SucursalesPublic"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalPublicDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalPublicDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SucursalPublicDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/tarifas": {
+      "get": {
+        "tags": [
+          "Tarifa"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TarifaDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TarifaDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TarifaDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Tarifa"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TarifaUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TarifaUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TarifaUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/tarifas/{id}": {
+      "get": {
+        "tags": [
+          "Tarifa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Tarifa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TarifaUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TarifaUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TarifaUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TarifaDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Tarifa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/tarifas/{id}/desactivar": {
+      "patch": {
+        "tags": [
+          "Tarifa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/tipos-habitacion": {
+      "get": {
+        "tags": [
+          "TipoHabitacion"
+        ],
+        "parameters": [
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoHabitacionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoHabitacionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoHabitacionDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "TipoHabitacion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/tipos-habitacion/{id}": {
+      "get": {
+        "tags": [
+          "TipoHabitacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "TipoHabitacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "TipoHabitacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/tipos-habitacion/{tipoGuid}": {
+      "get": {
+        "tags": [
+          "TipoHabitacion"
+        ],
+        "parameters": [
+          {
+            "name": "tipoGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "TipoHabitacion"
+        ],
+        "parameters": [
+          {
+            "name": "tipoGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoHabitacionUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/public/tipos-habitacion/{tipoHabitacionGuid}": {
+      "get": {
+        "tags": [
+          "TiposHabitacionPublic"
+        ],
+        "parameters": [
+          {
+            "name": "tipoHabitacionGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionPublicDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionPublicDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoHabitacionPublicDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/valoraciones": {
+      "get": {
+        "tags": [
+          "Valoracion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ValoracionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ValoracionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ValoracionDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Valoracion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValoracionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValoracionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValoracionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/valoraciones/{id}": {
+      "get": {
+        "tags": [
+          "Valoracion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValoracionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValoracionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValoracionDTO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Valoracion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/valoraciones/{id}/moderar": {
+      "patch": {
+        "tags": [
+          "Valoracion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionModeracionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionModeracionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionModeracionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/internal/valoraciones/{id}/responder": {
+      "patch": {
+        "tags": [
+          "Valoracion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionRespuestaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionRespuestaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValoracionRespuestaRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccommodationDetailResponseDTO": {
+        "type": "object",
+        "properties": {
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "estrellas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoAlojamiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioDesde": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenPrincipalUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "promedioValoracion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "totalValoraciones": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "habitacionesDisponibles": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviciosDestacados": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "horaCheckIn": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckOut": {
+            "type": "string",
+            "nullable": true
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          },
+          "descripcionCompleta": {
+            "type": "string",
+            "nullable": true
+          },
+          "tiposHabitacion": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccommodationRoomTypeDTO"
+            },
+            "nullable": true
+          },
+          "tarifasActivas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccommodationTariffDTO"
+            },
+            "nullable": true
+          },
+          "amenities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "politicas": {
+            "$ref": "#/components/schemas/AccommodationPolicyDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccommodationPolicyDTO": {
+        "type": "object",
+        "properties": {
+          "horaCheckIn": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckOut": {
+            "type": "string",
+            "nullable": true
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          },
+          "politicas": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccommodationReviewDTO": {
+        "type": "object",
+        "properties": {
+          "valoracionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "puntuacion": {
+            "type": "number",
+            "format": "double"
+          },
+          "comentarioPositivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "comentarioNegativo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoViaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "nombreVisibleCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "respuestaPropiedad": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccommodationReviewDTOBookingPagedResponseDTO": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccommodationReviewDTO"
+            },
+            "nullable": true
+          },
+          "pagina": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limite": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalResultados": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPaginas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tieneSiguiente": {
+            "type": "boolean"
+          },
+          "tieneAnterior": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccommodationRoomTypeDTO": {
+        "type": "object",
+        "properties": {
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCama": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadAdultos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadNinos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "areaM2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "disponiblesEnRango": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccommodationSearchItemDTO": {
+        "type": "object",
+        "properties": {
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "estrellas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoAlojamiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioDesde": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenPrincipalUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "promedioValoracion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "totalValoraciones": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "habitacionesDisponibles": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviciosDestacados": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "horaCheckIn": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckOut": {
+            "type": "string",
+            "nullable": true
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccommodationSearchItemDTOBookingPagedResponseDTO": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccommodationSearchItemDTO"
+            },
+            "nullable": true
+          },
+          "pagina": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limite": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalResultados": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPaginas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tieneSiguiente": {
+            "type": "boolean"
+          },
+          "tieneAnterior": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccommodationTariffDTO": {
+        "type": "object",
+        "properties": {
+          "tarifaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioPorNoche": {
+            "type": "number",
+            "format": "double"
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "minNoches": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CatalogoServicioDTO": {
+        "type": "object",
+        "properties": {
+          "idCatalogo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "catalogoGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoriaCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "aplicaIva": {
+            "type": "boolean"
+          },
+          "disponible24h": {
+            "type": "boolean"
+          },
+          "horaInicio": {
+            "type": "string",
+            "format": "date-span",
+            "nullable": true
+          },
+          "horaFin": {
+            "type": "string",
+            "format": "date-span",
+            "nullable": true
+          },
+          "iconoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "esEliminado": {
+            "type": "boolean"
+          },
+          "fechaInhabilitacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "motivoInhabilitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "creadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "modificadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaModificacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modificacionIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "servicioOrigen": {
+            "type": "string",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CatalogoServicioUpsertRequest": {
+        "type": "object",
+        "properties": {
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoriaCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionCatalogo": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "aplicaIva": {
+            "type": "boolean"
+          },
+          "disponible24h": {
+            "type": "boolean"
+          },
+          "horaInicio": {
+            "type": "string",
+            "format": "date-span",
+            "nullable": true
+          },
+          "horaFin": {
+            "type": "string",
+            "format": "date-span",
+            "nullable": true
+          },
+          "iconoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoCatalogo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HabitacionCreateRequest": {
+        "type": "object",
+        "properties": {
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idTipoHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "piso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "capacidadHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "descripcionHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoHabitacion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HabitacionDTO": {
+        "type": "object",
+        "properties": {
+          "idHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "habitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idTipoHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "piso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "capacidadHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "descripcionHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "esEliminado": {
+            "type": "boolean"
+          },
+          "fechaInhabilitacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "motivoInhabilitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "creadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "modificadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaModificacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modificacionIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "servicioOrigen": {
+            "type": "string",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HabitacionDetalleResponse": {
+        "type": "object",
+        "properties": {
+          "habitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "numeroHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "piso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "capacidadHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "imagenUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoHabitacion": {
+            "$ref": "#/components/schemas/TipoHabitacionRef"
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenPublicDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HabitacionEstadoRequest": {
+        "type": "object",
+        "properties": {
+          "nuevoEstado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HabitacionPublicDto": {
+        "type": "object",
+        "properties": {
+          "habitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "numeroHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "piso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "capacidadHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "descripcionHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "imagenUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenPublicDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HabitacionUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idTipoHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "piso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "capacidadHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "descripcionHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoHabitacion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImagenDTO": {
+        "type": "object",
+        "properties": {
+          "imagenGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idImagen": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "urlImagen": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "orden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "esPrincipal": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImagenPublicDto": {
+        "type": "object",
+        "properties": {
+          "imagenGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "urlImagen": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "orden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "esPrincipal": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImagenRequest": {
+        "type": "object",
+        "properties": {
+          "imagenGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "urlImagen": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "orden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "esPrincipal": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InhabilitarRequest": {
+        "type": "object",
+        "properties": {
+          "motivo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SucursalDTO": {
+        "type": "object",
+        "properties": {
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "codigoSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionCorta": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoAlojamiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "estrellas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "categoriaViaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "ubicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoPostal": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitud": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "longitud": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "horaCheckin": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckout": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkinAnticipado": {
+            "type": "boolean"
+          },
+          "checkoutTardio": {
+            "type": "boolean"
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "edadMinimaHuesped": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          },
+          "sePermiteFumar": {
+            "type": "boolean"
+          },
+          "estadoSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "esEliminado": {
+            "type": "boolean"
+          },
+          "fechaInhabilitacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "motivoInhabilitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "creadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "modificadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaModificacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modificacionIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "servicioOrigen": {
+            "type": "string",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SucursalPoliticasPatchRequest": {
+        "type": "object",
+        "properties": {
+          "horaCheckin": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckout": {
+            "type": "string",
+            "nullable": true
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          },
+          "sePermiteFumar": {
+            "type": "boolean"
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "checkinAnticipado": {
+            "type": "boolean"
+          },
+          "checkoutTardio": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SucursalPublicDto": {
+        "type": "object",
+        "properties": {
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "codigoSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoAlojamiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "estrellas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "categoriaViaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckin": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckout": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkinAnticipado": {
+            "type": "boolean"
+          },
+          "checkoutTardio": {
+            "type": "boolean"
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          },
+          "sePermiteFumar": {
+            "type": "boolean"
+          },
+          "estadoSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenPublicDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SucursalUpsertRequest": {
+        "type": "object",
+        "properties": {
+          "codigoSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionCorta": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoAlojamiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "estrellas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "categoriaViaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "ubicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoPostal": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitud": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "longitud": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "horaCheckin": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckout": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkinAnticipado": {
+            "type": "boolean"
+          },
+          "checkoutTardio": {
+            "type": "boolean"
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "edadMinimaHuesped": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          },
+          "sePermiteFumar": {
+            "type": "boolean"
+          },
+          "estadoSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TarifaDTO": {
+        "type": "object",
+        "properties": {
+          "idTarifa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tarifaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "codigoTarifa": {
+            "type": "string",
+            "nullable": true
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idTipoHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreTarifa": {
+            "type": "string",
+            "nullable": true
+          },
+          "canalTarifa": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "precioPorNoche": {
+            "type": "number",
+            "format": "double"
+          },
+          "porcentajeIva": {
+            "type": "number",
+            "format": "double"
+          },
+          "minNoches": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxNoches": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "permitePortalPublico": {
+            "type": "boolean"
+          },
+          "prioridad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estadoTarifa": {
+            "type": "string",
+            "nullable": true
+          },
+          "esEliminado": {
+            "type": "boolean"
+          },
+          "fechaInhabilitacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "motivoInhabilitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "creadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "modificadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaModificacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modificacionIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "servicioOrigen": {
+            "type": "string",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TarifaUpsertRequest": {
+        "type": "object",
+        "properties": {
+          "codigoTarifa": {
+            "type": "string",
+            "nullable": true
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idTipoHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreTarifa": {
+            "type": "string",
+            "nullable": true
+          },
+          "canalTarifa": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "precioPorNoche": {
+            "type": "number",
+            "format": "double"
+          },
+          "porcentajeIva": {
+            "type": "number",
+            "format": "double"
+          },
+          "minNoches": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxNoches": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "permitePortalPublico": {
+            "type": "boolean"
+          },
+          "prioridad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estadoTarifa": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoHabitacionDTO": {
+        "type": "object",
+        "properties": {
+          "idTipoHabitacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "codigoTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadAdultos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadNinos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoCama": {
+            "type": "string",
+            "nullable": true
+          },
+          "areaM2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "permiteEventos": {
+            "type": "boolean"
+          },
+          "permiteReservaPublica": {
+            "type": "boolean"
+          },
+          "estadoTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "esEliminado": {
+            "type": "boolean"
+          },
+          "fechaInhabilitacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "motivoInhabilitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "creadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "modificadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaModificacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modificacionIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "servicioOrigen": {
+            "type": "string",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoHabitacionPublicDto": {
+        "type": "object",
+        "properties": {
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "codigoTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadAdultos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadNinos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoCama": {
+            "type": "string",
+            "nullable": true
+          },
+          "areaM2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "permiteEventos": {
+            "type": "boolean"
+          },
+          "permiteReservaPublica": {
+            "type": "boolean"
+          },
+          "estadoTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenPublicDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoHabitacionRef": {
+        "type": "object",
+        "properties": {
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombreTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoHabitacionUpsertRequest": {
+        "type": "object",
+        "properties": {
+          "codigoTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadAdultos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadNinos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoCama": {
+            "type": "string",
+            "nullable": true
+          },
+          "areaM2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "permiteEventos": {
+            "type": "boolean"
+          },
+          "permiteReservaPublica": {
+            "type": "boolean"
+          },
+          "estadoTipoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagenRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValoracionCreateRequest": {
+        "type": "object",
+        "properties": {
+          "idEstadia": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idCliente": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idHabitacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "puntuacionGeneral": {
+            "type": "number",
+            "format": "double"
+          },
+          "puntuacionLimpieza": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionConfort": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionUbicacion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionInstalaciones": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionPersonal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionCalidadPrecio": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "comentarioPositivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "comentarioNegativo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoViaje": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValoracionDTO": {
+        "type": "object",
+        "properties": {
+          "idValoracion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "valoracionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idEstadia": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idCliente": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idHabitacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "puntuacionGeneral": {
+            "type": "number",
+            "format": "double"
+          },
+          "puntuacionLimpieza": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionConfort": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionUbicacion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionInstalaciones": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionPersonal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "puntuacionCalidadPrecio": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "comentarioPositivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "comentarioNegativo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoViaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoValoracion": {
+            "type": "string",
+            "nullable": true
+          },
+          "publicadaEnPortal": {
+            "type": "boolean"
+          },
+          "respuestaHotel": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRespuestaUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "moderadaPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "motivoModeracion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "creadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "modificadoPorUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaModificacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modificacionIp": {
+            "type": "string",
+            "nullable": true
+          },
+          "servicioOrigen": {
+            "type": "string",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValoracionModeracionRequest": {
+        "type": "object",
+        "properties": {
+          "nuevoEstado": {
+            "type": "string",
+            "nullable": true
+          },
+          "motivo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValoracionRespuestaRequest": {
+        "type": "object",
+        "properties": {
+          "respuesta": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Ingrese el token JWT con el formato: Bearer {token}",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
