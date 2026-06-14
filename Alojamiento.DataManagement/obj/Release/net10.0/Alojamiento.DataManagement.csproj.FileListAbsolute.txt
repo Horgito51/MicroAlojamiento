@@ -13,3 +13,4 @@ C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Release\net10.0\refint\Alojamiento.DataManagement.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Release\net10.0\Alojamiento.DataManagement.pdb
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Release\net10.0\ref\Alojamiento.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataManagement\obj\Release\net10.0\Alojamiento.DataManagement.sourcelink.json

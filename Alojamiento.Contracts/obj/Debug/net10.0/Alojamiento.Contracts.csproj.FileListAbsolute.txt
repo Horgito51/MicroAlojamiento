@@ -31,3 +31,7 @@ c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\Alojamiento.Contracts.deps.json
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\Alojamiento.Contracts.dll
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\Alojamiento.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Contracts\obj\Debug\net10.0\Alojamiento.Contracts.sourcelink.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildverify\middleware\Alojamiento.Contracts.deps.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildverify\middleware\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildverify\middleware\Alojamiento.Contracts.pdb

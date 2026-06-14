@@ -37,6 +37,7 @@ C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\obj\Release\net10.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\obj\Release\net10.0\linux-x64\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\obj\Release\net10.0\linux-x64\PubTmp\Out\Microsoft.SqlServer.Server.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\obj\Release\net10.0\linux-x64\PubTmp\Out\RabbitMQ.Client.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\obj\Release\net10.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\obj\Release\net10.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\obj\Release\net10.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

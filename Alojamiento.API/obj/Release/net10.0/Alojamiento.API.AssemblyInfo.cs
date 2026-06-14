@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Alojamiento.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11c8972c0dfe59a0ee9ff48f7ae0132028be1ac2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Alojamiento.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Alojamiento.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

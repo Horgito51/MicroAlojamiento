@@ -30,3 +30,4 @@ c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.DataAccess.runtimeconfig.json
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.DataAccess.dll
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.DataAccess.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.DataAccess\obj\Debug\net10.0\Alojamiento.DataAccess.sourcelink.json

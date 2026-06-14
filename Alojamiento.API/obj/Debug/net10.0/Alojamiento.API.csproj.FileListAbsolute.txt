@@ -202,3 +202,5 @@ c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.API.runtimeconfig.json
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.API.dll
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.API.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\obj\Debug\net10.0\Alojamiento.API.sourcelink.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.API\bin\Debug\net10.0\RabbitMQ.Client.dll

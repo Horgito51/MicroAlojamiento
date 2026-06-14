@@ -7,6 +7,7 @@ using Alojamiento.Business.Interfaces.Valoraciones;
 using Alojamiento.Business.Services.Alojamiento;
 using Alojamiento.Business.Services.Booking;
 using Alojamiento.Business.Services.Valoraciones;
+using Alojamiento.API.Eventing;
 using Alojamiento.API.GrpcServices;
 using Alojamiento.API.Services;
 using Alojamiento.DataAccess.Context;
@@ -16,6 +17,8 @@ using Alojamiento.DataAccess.Repositories.Interfaces.Valoraciones;
 using Alojamiento.DataAccess.Repositories.Valoraciones;
 using Alojamiento.DataManagement.Alojamiento.Interfaces;
 using Alojamiento.DataManagement.Alojamiento.Services;
+using Alojamiento.DataManagement.Eventing.Interfaces;
+using Alojamiento.DataManagement.Eventing.Services;
 using Alojamiento.DataManagement.UnitOfWork;
 using Alojamiento.DataManagement.Valoraciones.Interfaces;
 using Alojamiento.DataManagement.Valoraciones.Services;
@@ -98,6 +101,8 @@ builder.Services.AddScoped<IHabitacionDataService, HabitacionDataService>();
 builder.Services.AddScoped<ITarifaDataService, TarifaDataService>();
 builder.Services.AddScoped<ICatalogoServicioDataService, CatalogoServicioDataService>();
 builder.Services.AddScoped<IValoracionDataService, ValoracionDataService>();
+builder.Services.AddScoped<IOutboxMessageService, OutboxMessageService>();
+builder.Services.AddScoped<IInboxMessageService, InboxMessageService>();
 builder.Services.AddScoped<ISucursalService, SucursalService>();
 builder.Services.AddScoped<ITipoHabitacionService, TipoHabitacionService>();
 builder.Services.AddScoped<IHabitacionService, HabitacionService>();
@@ -105,6 +110,10 @@ builder.Services.AddScoped<ITarifaService, TarifaService>();
 builder.Services.AddScoped<ICatalogoServicioService, CatalogoServicioService>();
 builder.Services.AddScoped<IValoracionService, ValoracionService>();
 builder.Services.AddScoped<IBookingAccommodationService, BookingAccommodationService>();
+builder.Services.Configure<RabbitMqOptions>(builder.Configuration.GetSection("RabbitMq"));
+builder.Services.AddSingleton<RabbitMqConnection>();
+builder.Services.AddScoped<IEventBus, RabbitMqEventBus>();
+builder.Services.AddHostedService<ReservaCreadaConsumerHostedService>();
 builder.Services.AddSingleton<IReservaAvailabilityClient>(sp =>
 {
     var baseUrl = builder.Configuration["Services:ReservasGrpcUrl"]
@@ -146,6 +155,13 @@ app.UseMiddleware<AdminProfileAccessMiddleware>();
 app.UseAuthorization();
 app.MapGet("/", () => Results.Redirect("swagger"));
 app.MapGet("/health", () => Results.Ok(new { status = "ok", service = "Microservicio.Alojamiento" }));
+app.MapGet("/health/rabbitmq", (RabbitMqConnection rabbitMqConnection) =>
+{
+    var canConnect = rabbitMqConnection.CanConnect();
+    return canConnect
+        ? Results.Ok(new { status = "ok", broker = "connected", service = "Microservicio.Alojamiento" })
+        : Results.Problem("No fue posible conectar a RabbitMQ desde Alojamiento.", statusCode: StatusCodes.Status503ServiceUnavailable);
+});
 app.MapGet("/health/db", async (AlojamientoDbContext dbContext, ILoggerFactory loggerFactory) =>
 {
     var logger = loggerFactory.CreateLogger("HealthDb");
@@ -182,21 +198,25 @@ static void ConfigureHttpEndpoint(WebApplicationBuilder builder)
         {
             listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
         });
+
+        if (builder.Environment.IsDevelopment())
+        {
+            options.ListenAnyIP(7101, listenOptions =>
+            {
+                listenOptions.UseHttps();
+                listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+            });
+        }
     });
 }
 
 static GrpcChannel CreateReservasGrpcChannel(string baseUrl)
 {
     var uri = new Uri(baseUrl);
-    if (string.Equals(uri.Scheme, Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase))
+    return GrpcChannel.ForAddress(uri, new GrpcChannelOptions
     {
-        return GrpcChannel.ForAddress(uri, new GrpcChannelOptions
-        {
-            HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler())
-        });
-    }
-
-    return GrpcChannel.ForAddress(uri);
+        HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler())
+    });
 }
 
 static string ResolveDefaultConnectionString(IConfiguration configuration, IWebHostEnvironment environment)

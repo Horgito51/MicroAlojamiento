@@ -1,4 +1,5 @@
 using Alojamiento.DataAccess.Entities.Alojamiento;
+using Alojamiento.DataAccess.Entities.Eventing;
 using Alojamiento.DataAccess.Entities.Valoraciones;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,8 @@ namespace Alojamiento.DataAccess.Context
         public DbSet<HabitacionEntity> Habitaciones => Set<HabitacionEntity>();
         public DbSet<TarifaEntity> Tarifas => Set<TarifaEntity>();
         public DbSet<ValoracionEntity> Valoraciones => Set<ValoracionEntity>();
+        public DbSet<OutboxMessageEntity> OutboxMessages => Set<OutboxMessageEntity>();
+        public DbSet<InboxMessageEntity> InboxMessages => Set<InboxMessageEntity>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

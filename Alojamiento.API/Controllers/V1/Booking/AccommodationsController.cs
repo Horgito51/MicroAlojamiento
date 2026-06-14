@@ -2,6 +2,7 @@ using Alojamiento.API.Models.Requests.Public;
 using Alojamiento.Business.DTOs.Booking;
 using Alojamiento.Business.Exceptions;
 using Alojamiento.Business.Interfaces.Booking;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,9 @@ namespace Alojamiento.API.Controllers.V1.Booking
 {
     [ApiController]
     [AllowAnonymous]
-    [Route("api/v1/accommodations")]
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/accommodations")]
     public class AccommodationsController : ControllerBase
     {
         private readonly IBookingAccommodationService _bookingService;
@@ -76,7 +79,7 @@ namespace Alojamiento.API.Controllers.V1.Booking
             return Ok(await _bookingService.GetReviewsAsync(ParseGuid(sucursalGuid, "sucursalGuid"), pagina, limite, HttpContext.RequestAborted));
         }
 
-        [HttpGet("/api/v1/alojamiento/sucursales/{sucursalGuid}/valoraciones")]
+        [HttpGet("/api/v{version:apiVersion}/alojamiento/sucursales/{sucursalGuid}/valoraciones")]
         public async Task<ActionResult<BookingPagedResponseDTO<AccommodationReviewDTO>>> GetValoracionesBySucursal(
             string sucursalGuid,
             [FromQuery] int pagina = 1,

@@ -35,3 +35,4 @@ C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.Business.deps.json
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.Business.dll
 c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\Alojamiento.API\Alojamiento.Business.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Microservicio.Alojamiento\Alojamiento.Business\obj\Debug\net10.0\Alojamiento.Business.sourcelink.json
